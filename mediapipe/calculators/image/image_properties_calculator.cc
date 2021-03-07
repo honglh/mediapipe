@@ -69,8 +69,8 @@ class ImagePropertiesCalculator : public CalculatorBase {
   }
 
   absl::Status Process(CalculatorContext* cc) override {
-    int width;
-    int height;
+    int width = 0;
+    int height = 0;
 
     if (cc->Inputs().HasTag(kImageFrameTag) &&
         !cc->Inputs().Tag(kImageFrameTag).IsEmpty()) {
